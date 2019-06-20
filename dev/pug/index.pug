@@ -1,0 +1,117 @@
+include ./_mixins/_svg-icon.pug
+<!DOCTYPE html>
+html(lang="ua")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge")
+		title Стань частью "Pro-Recruitment Community"
+		link(rel="shortcut icon" type="image/x-icon" href="favicon.png")
+		// styles:css
+		// endinject
+	body
+		header.header
+			.container
+				.header__inner
+					.header__logo
+						a(href=json.header.logo.link).header__logo-link
+							img(src="assets/images/" + json.header.logo.img , alt="").header__logo-img
+					button#toggle-mob-nav.header_hamburger
+						+svg-icon({name: json.header.hamburger})
+					.header__navigation
+						ul.header__navigation-list#desktop-nav
+							each navigationItem in json.header.navigation
+								li.header__navigation-item
+									a.header__navigation-link(href=navigationItem.target)= navigationItem.title
+		nav.mobile-nav#mob-nav
+			ul.mobile-nav__list
+				each navigationItem in json.header.navigation
+					li.mobile-nav__item
+						a.mobile-nav__link(href=navigationItem.target)= navigationItem.title
+		section.hero#about
+			.hero__background-container
+				img(src="assets/images/background-1.png", alt="").hero__background--first
+				img(src="assets/images/background-1.png", alt="").hero__background--second
+			.container
+				.hero__inner
+					.row.justify-content-center
+						.col-lg-8
+							.hero-heading= json.hero.title
+					.row.align-items-center
+						.col-lg-5
+							.hero-video
+								iframe(width="560" height="315" src="https://www.youtube.com/embed/AFWIv6uj04A" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+						.col-lg-6.offset-lg-1
+							.hero__text.text-formatting
+								p= json.hero.text
+		section.subscription#subscription
+			.container
+				.row.justify-content-center
+					.col-lg-10
+						.subscription-heading= json.subscription.title
+						.subscription-leading= json.subscription.lead
+			.container
+				.row.justify-content-center
+					.col-lg-6.col-xl-4
+						.subscription-form
+							script(src="//static-login.sendpulse.com/apps/fc3/build/loader.js" sp-form-id="97ef42aa7be3e70a4825ec9594a63d2f6ff086df72f79750a0a62f20c75e0a1d")
+						.subscription__or-container
+							.subscription__or= json.subscription.or
+						.chat-widget
+							.mcwidget-embed(data-widget-id="5381900")
+		section.events#events
+			.container
+				.row.justify-content-center
+					.col-lg-4
+						.events-heading= json.event.title
+				.row.justify-content-center
+					.col-lg-10
+						.events__text.text-formatting
+							p= json.event.text
+		section.meetups#meetups
+			.meetups__background-container
+				img(src="assets/images/background-2.png", alt="").meetups__background--first
+			.container
+				.row.justify-content-center
+					.col-lg-4
+						.meetups-heading= json.meetup.title
+				ul.meetups__list
+					each meetup, index in json.meetup.list
+						li.meetup__item(class=index == 0 ? 'is-visible' : '')
+							.row
+								.col-lg-3.col-xl-2.offset-xl-1.offset-lg-1
+									.meetup__image-container
+										img(src="assets/images/" + meetup.image, alt="").meetup__image
+								.col-lg-6.col-xl-7
+									.meetup__title= meetup.title
+									.meetup__meta-info-container
+										.meetup__meta-info
+											.meetup__date.meetup__meta-info-item 
+												+svg-icon({name: "date", class: "meetup__icon"})
+												= meetup.date
+											.meetup__time.meetup__meta-info-item 
+												+svg-icon({name: "time", class: "meetup__icon"})
+												= meetup.time
+											.meetup__address.meetup__meta-info-item 
+												+svg-icon({name: "address", class: "meetup__icon"})
+												= meetup.address
+									.meetup__button-container
+										a(href=meetup.button.link).meetup__button= meetup.button.name
+				// SPOILER BUTTON
+				//.row
+					.col-lg-10.offset-lg-1
+						.pastevents-button-container
+							button(type="button")#pastevents-button.pastevents-button= json.meetup.pastevents.name
+				// .SPOILER BUTTON
+		footer.footer
+			.container
+				ul.footer-socials__list
+					each item in json.footer.socials
+						li.footer-socials__item
+							a.footer-socials__link(href=item.link, target="_blank")
+								+svg-icon({name: item.icon, class: "footer-socials__icon"})
+		script(src="//widget.manychat.com/5381900.js" async="async")
+		// svgs:svg
+		// endinject
+		// scripts:js
+		// endinject

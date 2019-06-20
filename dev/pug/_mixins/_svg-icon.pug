@@ -1,0 +1,6 @@
+mixin svg-icon(c)
+    - c.name;
+    - c.size = c.size || 45;
+    - c.class = c.class || '';
+    svg.svg-icon(viewBox='0 0 ' + c.size + ' ' + c.size class=c.class)
+        use(xlink:href= '#' + c.name)

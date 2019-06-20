@@ -1,0 +1,166 @@
+.meetups {
+	padding-top: 30px;
+	padding-bottom: 70px;
+	position: relative;
+}
+
+.meetups__background-container {
+	position: absolute;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.meetups__background--first {
+	position: absolute;
+	bottom: 0;
+	right: 5%;
+	transform: translateY(50%);
+}
+
+.meetups-heading {
+	font-size: 28px;
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 20px;
+
+	@include media-breakpoint-up(lg) {
+		font-size: 36px;
+		margin-bottom: 40px;
+	}
+}
+
+.meetups__list {
+	margin-bottom: 40px;
+}
+
+.meetup__item {
+	display: none;
+
+	&.is-visible {
+		display: block;
+	}
+
+	&+& {
+		margin-top: 60px;
+	}
+}
+
+.meetup__image-container {
+	text-align: center;
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: 25px;
+	}
+}
+
+.meetup__image {
+	border-radius: 100%;
+	vertical-align: top;
+}
+
+.meetup__title {
+	font-size: 24px;
+	font-weight: 700;
+	color: #65a7dd;
+	margin-bottom: 20px;
+	text-align: center;
+
+	@include media-breakpoint-up(lg) {
+		text-align: left;
+	}
+}
+
+.meetup__meta-info-container {
+	margin-bottom: 20px;
+
+	@include media-breakpoint-up(lg) {
+		max-width: 250px;
+	}
+}
+
+.meetup__meta-info {
+	margin: 0 -10px -10px 0;
+	text-align: center;
+
+	@include media-breakpoint-up(lg) {
+		text-align: left;
+	}
+}
+
+.meetup__meta-info-item {
+	margin: 0 10px 10px 0;
+}
+
+.meetup__date {
+	display: inline-block;
+}
+
+.meetup__time {
+	display: inline-block;
+}
+
+.meetup__address {
+	display: inline-block;
+}
+
+.meetup__icon {
+	fill: #000;
+	margin-right: .5em;
+}
+
+.meetup__button {
+	display: inline-block;
+	padding: 15px 45px;
+	background-color: #ffe14c;
+	font-size: 20px;
+	line-height: 1;
+	font-weight: 700;
+	border-radius: 50px;
+	border: 3px solid #fff;
+
+	&:hover {
+		background-color: lighten(#ffe14c, 10%);
+		;
+	}
+}
+
+.meetup__button-container {
+	text-align: center;
+
+	@include media-breakpoint-up(lg) {
+		text-align: left;
+	}
+}
+
+.pastevents-button-container {
+	text-align: center;
+
+	@include media-breakpoint-up(lg) {
+		text-align: left;
+	}
+}
+
+/* purgecss start ignore */
+.pastevents-button {
+	display: inline-block;
+	color: #9fc5e8;
+	padding: 10px 20px;
+	border: 3px solid #74b0e0;
+	border-radius: 50px;
+	background-color: #fff;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #74b0e0;
+		color: #fff;
+	}
+
+	&.is-hidden {
+		display: none;
+	}
+}
+
+/* purgecss end ignore */

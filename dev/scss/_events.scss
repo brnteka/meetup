@@ -1,0 +1,20 @@
+.events {
+    padding-top: 50px;
+    padding-bottom: 15px;
+    @include media-breakpoint-up(lg) {
+        padding-bottom: 30px; 
+    }
+}
+.events-heading {
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+    @include media-breakpoint-up(lg) {
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+}
+.events__text {
+
+}

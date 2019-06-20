@@ -1,0 +1,42 @@
+/* purgecss start ignore */
+
+.mobile-nav {
+    display: none;
+
+    &.is-active {
+        display: block;
+        position: fixed;
+        z-index: 1001;
+        width: 100%;
+        left: 0;
+        top: 44px;
+
+        @include media-breakpoint-up(sm) {
+            top: 64px;
+        }
+
+        @include media-breakpoint-up(md) {
+            top: 79px;
+        }
+    }
+
+    background-color: #007AA9;
+}
+
+/* purgecss end ignore */
+
+.mobile-nav__list {
+    text-align: center;
+}
+
+.mobile-nav__item {
+    &:not(:last-child) {
+        border-bottom: 1px solid darken(#00b0f3, 10%)
+    }
+}
+
+.mobile-nav__link {
+    display: block;
+    padding: 10px;
+    color: #fff;
+}
